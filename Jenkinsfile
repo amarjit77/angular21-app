@@ -33,6 +33,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo "Deployment step here..."
+                bat 'xcopy /E /Y /I dist\\angular21-app "C:\\inetpub\\wwwroot\\angular21-app"'
             }
         }
     }
