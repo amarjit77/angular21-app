@@ -1,0 +1,77 @@
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-borderless table-primary align-middle">
+        <thead class="table-light">
+        <tbody class="table">
+            <tr class="table-tr">
+                <td> Interpolation Data Binding</td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                    course Name : {{ courseName }} <br>
+                    course Duration : {{ courseDuration }} <br>
+                    course Notes : {{ courseNotes }} <br>
+                    course Price : {{ coursePrice }} <br>
+                    is course Available? : {{ isAvailable }} <br>
+                    Current Date : {{ currentDate }} <br>
+                </td>
+            </tr>
+            <tr><td><br><br></td></tr>
+            <tr class="table-tr">
+                <td> Property Binding</td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                    Course Name : <input [type]="inputType" [value]="courseName" /> <br>
+                    Course Notes : <input [type]="inputType" [class]="className" [value]="courseNotes" /> <br>
+                    is course Available? : <input [type]="radioType" [value]="isAvailable" /> <br>
+                    are you agree : <input [type]="chkType" /> <br>
+                    <input [type]="buttonType" value="Button"  /> <br>
+                </td>
+            </tr>
+
+            <tr><td><br><br></td></tr>
+            <tr class="table-tr">
+                <td> Event Binding - One Way</td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                    <input [type]="buttonType" value="Show Message" (click)="showMessage()" /> <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                    <select>
+                        <option *ngFor="let course of courseList">
+                            {{ course.name + " : " + course.duration + " for " + course.price }}
+                        </option>
+                    </select>
+                </td>
+            </tr>
+
+             <tr><td><br><br></td></tr>
+            <tr class="table-tr">
+                <td> Event Binding - Two Way</td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                    <input [type]="inputType" [(ngModel)]="courseName" /> <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                    <button (click)="updateCourseName('Dot Net')"> Update Course Name </button> <br>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            
+        </tfoot>
+    </table>
+</div>
+
