@@ -37,7 +37,7 @@ export class Databinding {
     { name: 'Angular 18', duration: 70, price: 2511.99 },
     { name: 'Angular 19', duration: 80, price: 3566.99 },
     { name: 'Angular 20', duration: 90, price: 8789.99 },
-    { name: 'Angular 21', duration: 100, price: 15455.99 }
+    { name: 'Angular 21', duration: 100, price: 15475.99 }
   ]
 
   showMessage(): void {
