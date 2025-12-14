@@ -1,0 +1,48 @@
+<h3>NgClass and NgStyle Demo</h3>
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header bg-primary">
+                <div class="row">
+                    <div class="col-8">
+                        <span>Demo 1</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+               <span [ngClass]="bgClass"> Hello </span> <br>
+                <input type="text" [(ngModel)]="bgClass"> <br>
+                <button (click)="isFlag = !isFlag" [ngClass]="isFlag ? 'bg-success' : 'bg-danger'"> My Status</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header bg-primary">
+                <div class="row">
+                    <div class="col-8">
+                        <span>Demo 2</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+               <table class="table table-bordered table-striped table-hover table-sm text-center">
+                    <tr>
+                        <td>Id</td>
+                        <td>Name</td>
+                        <td>Age</td>
+                        <td>Status</td>
+                    </tr>
+                        @for(stud of studelist; track $index){
+                            <tr>
+                                <td>{{stud.id}}</td>
+                                <td [ngStyle]="{color: stud.age > 18? textGreenColor : textRedColor}">{{stud.name}}</td>  
+                                <td>{{stud.age}}</td>
+                                <td [ngClass]="stud.age > 18 ? 'bg-success' : 'bg-danger'">{{stud.age > 18 ? 'Adult' : 'Minor'}}</td>
+                            </tr>
+                        }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
