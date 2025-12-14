@@ -1,0 +1,15 @@
+.td{
+    margin: 2px;
+    padding: 2px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.th{
+    margin: 2px;
+    padding: 2px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: lightgray;
+    font-weight: bold;
+}

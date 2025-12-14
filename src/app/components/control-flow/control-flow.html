@@ -1,0 +1,74 @@
+<div class="div">
+   Enter Company Name:  <input type="text" class="form-control" placeholder="Enter company" [(ngModel)]="companyName">
+</div>
+<br>
+@if (((companyName | lowercase) == 'tata') || ((companyName | uppercase) == 'TATA')) {
+    <div class="row">
+        <br>
+        <div class="col-12">
+            <input type="checkbox" [(ngModel)]="isOffer"> DO You have a car? 
+        </div>
+        @if (isOffer){
+            <br>
+            <div class="col-12">
+                <input type="text" class="form-control"  placeholder="Enter your car model">
+            </div>
+        }
+    </div>
+}
+@else {
+    <br><br>
+    <span>Enter Valid Company Name</span>
+    {{setOffer(false)}}
+}
+<br><br>
+
+<div class="div">
+    Company List : 
+    <ul>
+        @for (item of companyList; track $index) {
+            <li>{{$index + 1}} {{item}}</li>
+        }
+    </ul>
+</div>
+
+<div class="div">
+    Company List : 
+    <ul>
+        @for (item of companyList; track $index) {
+            @if ((item | lowercase) == 'tata') {
+                <li> {{$index + 1}} {{item}}</li>
+            }
+        }
+    </ul>
+</div>
+
+<br>
+<div class="div">   
+    Employee List :
+    <table>
+        <tr>
+            @for(header of tableHeaders; track $index) {
+                <th class="th">{{header}}</th>
+            }
+        </tr>
+            @for(emp of employeeList; track emp.id) {
+                <tr>
+                    <td class="td">{{emp.id}}</td>
+                    <td class="td">{{emp.name}}</td>
+                    <td class="td">{{emp.age}}</td>
+                    <td class="td">{{emp.company}}</td>
+                    <td class="td">
+                        @if (emp.status)
+                        {
+                            <span class="text-success">Active</span>
+                        }
+                        @else {
+                            <span class="text-danger">Inactive</span>
+                        }
+                    </td>
+                </tr>
+            }
+    </table>
+</div>
+
