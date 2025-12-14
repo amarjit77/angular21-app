@@ -15,7 +15,7 @@ export class Signal {
 
     constructor() {
       setTimeout(() => {
-        console.log('Before : ' + this.courseName());
+        console.log('Before  : ' + this.courseName());
         this.courseName.set("Advanced Angular Concepts");
         console.log('After : ' + this.courseName());
       }, 5000);
