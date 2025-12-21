@@ -1,0 +1,116 @@
+<!-- Bootstrap card with responsive form for userObj (static HTML, no Angular bindings) -->
+<div class="container py-3">
+	<div class="card shadow-sm">
+		<div class="card-header bg-primary text-white">
+			<h5 class="mb-0">User</h5>
+		</div>
+
+		<div class="card-body">
+			<form #form="ngForm">
+				<div class="row g-3">
+					<div class="col-12 col-md-5">
+						<label for="name" class="form-label">Name</label>
+						<input type="text" #name="ngModel" required minlength="5" [(ngModel)]="userObj.name" class="form-control" id="name" name="name" value="">
+                        @if(username.touched || username.dirty)
+						{
+							<div class="text-danger">
+								<!-- Example validation message -->
+								@if(name.errors?.['required'])
+								{
+									<span>Name is required.</span>
+								}
+								@else if(name.errors?.['minlength'])
+								{
+									<span>Name must be at least 5 characters long.</span>
+								}
+							</div>
+						}
+					</div>
+
+					<div class="col-12 col-md-5">
+						<label for="username" class="form-label">User name</label>
+						<input type="text" #username="ngModel" required minlength="8" [(ngModel)]="userObj.username" class="form-control" id="username" name="username" value="">
+						@if(username.touched || username.dirty)
+						{
+							<div class="text-danger">
+								@if(username.errors?.['required'])
+								{
+									<span>User name is required.</span>
+								}
+								@else if(username.errors?.['minlength'])
+								{
+									<span>Username must be at least 8 characters long.</span>
+								}
+							</div>
+						}
+					</div>
+
+					<div class="col-12 col-md-6">
+						<label for="email" class="form-label">Email</label>
+						<input type="email" #email="ngModel" required [(ngModel)]="userObj.email" class="form-control" id="email" name="email" value="">
+                        @if(username.touched || username.dirty)
+						{
+							<div class="text-danger">
+								@if(email.errors?.['required'])
+								{
+									<span>Email is required.</span>
+								}
+							</div>
+						}
+					</div>
+
+					<div class="col-12 col-md-6">
+						<label for="password" class="form-label">Password</label>
+						<input type="password" #password="ngModel" required [(ngModel)]="userObj.password" class="form-control" id="password" name="password" value="">
+						@if(username.touched || username.dirty)
+						{
+							<div class="text-danger">
+								@if(password.errors?.['required'])
+								{
+									<span>Password is required.</span>
+								}
+							</div>
+						}
+					</div>
+
+					<div class="col-12 col-md-6">
+						<label for="city" class="form-label">City</label>
+						<input type="text" #city="ngModel" required [(ngModel)]="userObj.city" class="form-control" id="city" name="city" value="">
+						
+						@if(username.touched || username.dirty)
+						{
+							<div class="text-danger">
+								@if(city.errors?.['required'])
+								{
+									<span>City is required.</span>
+								}
+							</div>
+						}
+					</div>
+
+					<div class="col-12 col-md-6">
+						<label for="state" class="form-label">State</label>
+						<input type="text" #state="ngModel" required [(ngModel)]="userObj.state" class="form-control" id="state" name="state" value="">
+						@if(username.touched || username.dirty)
+						{
+							<div class="text-danger">
+								@if(state.errors?.['required'])
+								{
+									<span>State is required.</span>
+								}
+							</div>
+						}
+					</div>
+				</div>
+
+				<div class="row mt-4">
+					<div class="col-12 d-flex justify-content-end gap-2">
+						<button type="reset" class="btn btn-secondary">Reset</button>
+						<button type="submit" [disabled]="form.invalid" class="btn btn-primary">Save</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+

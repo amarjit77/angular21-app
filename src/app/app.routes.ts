@@ -7,6 +7,8 @@ import { Notfound } from './components/notfound/notfound';
 import { Home } from './components/home/home';
 import { ControlFlow } from './components/control-flow/control-flow';
 import { NgClassStyle } from './components/ng-class-style/ng-class-style';
+import { UserMaster } from './user-master/user-master';
+import { ReactiveUser } from './reactive-user/reactive-user';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,5 +18,7 @@ export const routes: Routes = [
     { path: 'signal', component: Signal},
     { path: 'controlflow', component: ControlFlow},
     { path: 'ng-class-style', component: NgClassStyle},
+    { path: 'users', component: UserMaster},
+    { path: 'reactiveUser', component: ReactiveUser},
     { path: '**', component: Notfound}
 ];
