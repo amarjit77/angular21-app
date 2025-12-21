@@ -105,7 +105,7 @@
 				<div class="row mt-4">
 					<div class="col-12 d-flex justify-content-end gap-2">
 						<button type="reset" class="btn btn-secondary">Reset</button>
-						<button type="submit" class="btn btn-primary">Save</button>
+						<button type="submit" [disabled]="userForm.invalid" class="btn btn-primary">Save</button>
 					</div>
 				</div>
 			</form>
